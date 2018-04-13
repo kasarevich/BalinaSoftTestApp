@@ -1,0 +1,18 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+
+    </style>
+    <style name="CustomButton" parent="Widget.AppCompat.Button">
+        <item name="android:background">@color/color_background</item>
+        <item name="android:textColor">@color/color_white</item>
+    </style>
+    <style name="AppTabLayout" parent="Widget.Design.TabLayout">
+        <item name="tabBackground">@color/color_background</item>
+        <item name="tabIndicatorHeight">6dp</item>
+        <item name="tabIndicatorColor">@color/color_white</item>
+    </style>
+
+</resources>

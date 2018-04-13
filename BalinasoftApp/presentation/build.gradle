@@ -1,0 +1,52 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion rootProject.compileSdkVersion
+    buildToolsVersion rootProject.buildToolsVersion
+    defaultConfig {
+        applicationId "com.balinasoft.balinasoftapp"
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        compileOptions {
+            sourceCompatibility JavaVersion.VERSION_1_8
+            targetCompatibility JavaVersion.VERSION_1_8
+        }
+    }
+
+  /*  signingConfigs{
+        release{
+            storeFile{'../dev.jks'}
+            storePassword '12345678'
+            keyAlias 'alias'
+            
+        }
+    }*/
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation project(path: ':data')
+    def dependency = rootProject.ext.dependencies
+    implementation dependency.supportAppcompat
+    implementation dependency.constraintLayout
+    implementation dependency.supportDesign
+    implementation dependency.moxy
+    implementation dependency.moxyCompat
+    annotationProcessor dependency.moxyCompiler
+    implementation dependency.dagger
+    annotationProcessor dependency.daggerCompiler
+    implementation dependency.rxAndroid
+    implementation dependency.rxJava
+    implementation dependency.butterknife
+    annotationProcessor dependency.butterknifeCompiler
+}
