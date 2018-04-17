@@ -2,6 +2,8 @@ package com.balinasoft.data.net;
 
 
 import com.balinasoft.data.entity.LoggedInUser;
+import com.balinasoft.data.entity.User;
+
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
@@ -19,11 +21,11 @@ public class RestService {
     }
 
     public Observable<LoggedInUser> signIn (String login, String password){
-        return mRestApi.logIn(login, password);
+        return mRestApi.logIn("application/json", "application/json", new User(login, password));
     }
 
     public Observable<LoggedInUser> signUp (String login, String password){
-        return mRestApi.register(login, password);
+        return mRestApi.register("application/json", "application/json", new User(login, password));
     }
 
 

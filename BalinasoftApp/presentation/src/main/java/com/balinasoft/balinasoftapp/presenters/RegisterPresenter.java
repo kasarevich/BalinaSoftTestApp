@@ -11,6 +11,7 @@ import com.balinasoft.domain.interactors.SignUpUseCase;
 
 import javax.inject.Inject;
 
+import io.reactivex.CompletableObserver;
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 
@@ -37,27 +38,22 @@ public class RegisterPresenter  extends BasePresenter<LoginView> {
             getViewState().showLoginError("Passwords can't be shorter than 8 characters");
         }else {
 
-            mSignUpUseCase.get(login, pass1).subscribe(new Observer<Integer>() {
+            mSignUpUseCase.get(login, pass1).subscribe(new CompletableObserver() {
                 @Override
                 public void onSubscribe(Disposable d) {
                     compositeDisposable.add(d);
                 }
 
                 @Override
-                public void onNext(Integer integer) {
-                    getViewState().finishSignIn();
-                    getViewState().showMessageToUser(integer.toString());
-
-                }
-
-                @Override
                 public void onError(Throwable e) {
-                    Log.e("ERRR", "!!!!!!!!!!!!!!!!!!!!!!!!");
+                    getViewState().finishSignIn();
                     getViewState().showMessageToUser(e.toString());
                 }
 
                 @Override
                 public void onComplete() {
+                    getViewState().finishSignIn();
+                    getViewState().showMessageToUser("ur registered");
 
                 }
             });

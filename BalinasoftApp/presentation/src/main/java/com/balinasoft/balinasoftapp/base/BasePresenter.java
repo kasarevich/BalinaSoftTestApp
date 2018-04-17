@@ -13,6 +13,9 @@ public abstract class BasePresenter<View extends MvpView> extends MvpPresenter<V
 
     protected CompositeDisposable compositeDisposable = new CompositeDisposable();
 
+    public BasePresenter() {
+        createInject();
+    }
 
     public abstract void createInject();
 

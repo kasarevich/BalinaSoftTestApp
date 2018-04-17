@@ -1,17 +1,17 @@
 package com.balinasoft.data.net;
 
 import com.balinasoft.data.entity.LoggedInUser;
+import com.balinasoft.data.entity.User;
 
 import io.reactivex.Observable;
-import retrofit2.http.Field;
+import retrofit2.http.Body;
+import retrofit2.http.Header;
 import retrofit2.http.POST;
 
 public interface RestApi {
+    @POST("api/account/signin")
+    Observable<LoggedInUser> logIn(@Header("Accept") String accept, @Header("Content-Type") String acceptContent, @Body User user);
 
-    @POST("v1/api/account/signin")
-    Observable<LoggedInUser> logIn(@Field("login") String login, @Field("password") String password);
-
-    @POST("v1/api/account/signup")
-    Observable<LoggedInUser> register(@Field("login") String login, @Field("password") String password);
-
+    @POST("api/account/signup")
+    Observable<LoggedInUser> register(@Header("Accept") String accept, @Header("Content-Type") String acceptContent, @Body User user);
 }

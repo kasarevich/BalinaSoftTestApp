@@ -1,6 +1,5 @@
 package com.balinasoft.balinasoftapp.presenters;
 
-import android.util.Log;
 
 import com.arellomobile.mvp.InjectViewState;
 import com.balinasoft.balinasoftapp.app.App;
@@ -11,15 +10,15 @@ import com.balinasoft.domain.interactors.SignInUseCase;
 
 import javax.inject.Inject;
 
-import io.reactivex.Observer;
+import io.reactivex.CompletableObserver;
 import io.reactivex.disposables.Disposable;
 
 
 @InjectViewState
 public class LoginPresenter extends BasePresenter<LoginView> {
 
-    @Inject
-    SignInUseCase mSignInUseCase;
+        @Inject
+        SignInUseCase mSignInUseCase;
 
     @Override
     public void createInject() {
@@ -33,28 +32,22 @@ public class LoginPresenter extends BasePresenter<LoginView> {
         }else if(!Validation.checkPassword(pas)){
             getViewState().showLoginError("Passwords can not be shorter than 8 characters");
         }else {
-           mSignInUseCase.get(login, pas).subscribe(new Observer<Integer>() {
+           mSignInUseCase.get(login, pas).subscribe(new CompletableObserver() {
                @Override
                public void onSubscribe(Disposable d) {
                    compositeDisposable.add(d);
                }
 
                @Override
-               public void onNext(Integer integer) {
-                    getViewState().finishSignIn();
-                    getViewState().showMessageToUser(integer.toString());
-
-               }
-
-               @Override
                public void onError(Throwable e) {
-                   Log.e("ERRORRR", "!!!!!!!!!!!!");
+                   getViewState().finishSignIn();
                    getViewState().showMessageToUser(e.toString());
                }
 
                @Override
                public void onComplete() {
-
+                   getViewState().finishSignIn();
+                   getViewState().showMessageToUser("U are loggined");
                }
            });
         }

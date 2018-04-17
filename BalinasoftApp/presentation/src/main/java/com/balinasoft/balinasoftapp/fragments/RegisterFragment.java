@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.arellomobile.mvp.MvpAppCompatFragment;
 import com.arellomobile.mvp.presenter.InjectPresenter;
@@ -87,7 +88,6 @@ public class RegisterFragment extends MvpAppCompatFragment implements LoginView 
 
     @Override
     public void showMessageToUser(String msg) {
-
-
+        Toast.makeText(getContext(), msg, Toast.LENGTH_LONG).show();
     }
 }

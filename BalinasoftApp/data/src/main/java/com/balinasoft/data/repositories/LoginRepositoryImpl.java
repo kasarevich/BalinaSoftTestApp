@@ -10,16 +10,15 @@ import com.balinasoft.domain.repositories.LoginRepository;
 
 import javax.inject.Inject;
 
+import io.reactivex.Completable;
 import io.reactivex.Observable;
+import io.reactivex.annotations.NonNull;
 
 public class LoginRepositoryImpl implements LoginRepository{
     private RestService restService;
     private Context context;
 
-    /*
-    fixme возможно здесь добавить String token
-    если решу делать кнопку выйти, то продумать переход к меню регистрации
-    */
+
 
     @Inject
     public LoginRepositoryImpl(Context context, RestService restService) {
@@ -28,21 +27,18 @@ public class LoginRepositoryImpl implements LoginRepository{
     }
 
     @Override
-    public Observable<Integer> signIn (String login, String password){
-        return restService.signIn(login, password).map(this::map);
+    public Completable signIn (String login, String password){
+           return Completable.fromObservable(restService.signIn(login, password).map(this::map));
     }
 
     @Override
-    public Observable<Integer> signUp (String login, String password){
-        return restService.signUp(login, password).map(this::map);
+    public Completable signUp (String login, String password){
+        return Completable.fromObservable(restService.signUp(login, password).map(this::map));
     }
 
-    private Integer map(LoggedInUser user) {
-        Integer response = user.getStatus();
-       /* if (response == 200){
+    private LoggedInUser map(LoggedInUser user) {
             AuthUtils.saveToken(context, user.getUserData().getToken()); // сохранение токена
-        }*/
-        return response;
+       return user;
     }
 
 

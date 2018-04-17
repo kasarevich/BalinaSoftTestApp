@@ -5,6 +5,7 @@ import com.balinasoft.domain.repositories.LoginRepository;
 
 import javax.inject.Inject;
 
+import io.reactivex.Completable;
 import io.reactivex.Observable;
 
 public class SignInUseCase extends BaseUseCase {
@@ -17,7 +18,7 @@ public class SignInUseCase extends BaseUseCase {
         this.mLoginRepository = loginRepository;
     }
 
-    public Observable<Integer> get (String login, String password){
+    public Completable get (String login, String password){
         return mLoginRepository.signIn(login, password).subscribeOn(threadExecution).observeOn(postExecutionThread);
     }
 
