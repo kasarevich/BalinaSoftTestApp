@@ -1,6 +1,6 @@
 package com.balinasoft.balinasoftapp.fragments;
 
-import android.app.Dialog;
+import android.support.v7.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -33,6 +33,7 @@ public class LoginFragment extends MvpAppCompatFragment implements LoginView {
     Button mLoginButton;
 
     ProgressDialog mProgress;
+    AlertDialog.Builder mDialogBuilder;
 
     @InjectPresenter
     LoginPresenter loginPresenter;
@@ -61,22 +62,12 @@ public class LoginFragment extends MvpAppCompatFragment implements LoginView {
         mProgress.setMessage("Waiting for server");
         mProgress.setCanceledOnTouchOutside(false);
         mProgress.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-        mProgress.setButton(Dialog.BUTTON_POSITIVE, "CLOSE", (dialog, which) -> mProgress.dismiss());
         mProgress.show();
-        mProgress.getButton(DialogInterface.BUTTON_POSITIVE).setVisibility(View.GONE);
     }
 
     @Override
     public void finishSignIn() {
         mProgress.dismiss();
-    }
-
-    @Override
-    public void showLoginError(String msg) {
-
-        mProgress.setTitle("ERROR");
-        mProgress.setMessage(msg);
-        mProgress.getButton(DialogInterface.BUTTON_POSITIVE).setVisibility(View.VISIBLE);
     }
 
 
@@ -89,6 +80,24 @@ public class LoginFragment extends MvpAppCompatFragment implements LoginView {
     @Override
     public void showMessageToUser(String msg) {
         Toast.makeText(getContext(), msg, Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void showDialog(String msg, String title) {
+        mDialogBuilder = new AlertDialog.Builder(getContext());
+        mDialogBuilder
+                .setTitle(title)
+                .setMessage(msg)
+                .setNegativeButton("Close",
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.cancel();
+                            }
+                        });
+
+        AlertDialog alertDialog = mDialogBuilder.create();
+        alertDialog.show();
     }
 
 }

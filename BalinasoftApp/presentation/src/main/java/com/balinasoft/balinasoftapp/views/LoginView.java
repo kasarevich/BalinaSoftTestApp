@@ -9,6 +9,6 @@ public interface LoginView extends MvpView {
     void startSignIn();
     void finishSignIn();
     void showMessageToUser(String msg);
-    void showLoginError(String msg);
+    void showDialog(String msg, String title);
 
 }

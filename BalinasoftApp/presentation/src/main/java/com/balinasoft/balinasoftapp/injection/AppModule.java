@@ -9,6 +9,8 @@ import com.balinasoft.data.net.RestService;
 import com.balinasoft.data.repositories.LoginRepositoryImpl;
 import com.balinasoft.domain.executor.PostExecutionThread;
 import com.balinasoft.domain.repositories.LoginRepository;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 
 import javax.inject.Singleton;
@@ -50,16 +52,24 @@ public class AppModule {
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build();
     }
+
     @NonNull
     @Provides
     @Singleton
     public RestApi getRestApi(Retrofit retrofit) {
         return retrofit.create(RestApi.class);
     }
+
     @NonNull
     @Provides
     public LoginRepository getLoginRepository(Context context, RestService restService) {
         return new LoginRepositoryImpl(context, restService);
+    }
+
+    @Provides
+    @Singleton
+    public Gson getGson(){
+        return new GsonBuilder().create();
     }
 
 }

@@ -7,6 +7,7 @@ import com.balinasoft.balinasoftapp.app.App;
 import com.balinasoft.balinasoftapp.base.BasePresenter;
 import com.balinasoft.balinasoftapp.utils.Validation;
 import com.balinasoft.balinasoftapp.views.LoginView;
+import com.balinasoft.data.errors.Error;
 import com.balinasoft.domain.interactors.SignUpUseCase;
 
 import javax.inject.Inject;
@@ -31,13 +32,15 @@ public class RegisterPresenter  extends BasePresenter<LoginView> {
 
         getViewState().startSignIn();
         if (!Validation.checkLogin(login)){
-            getViewState().showLoginError("Incorrect email");
+            getViewState().finishSignIn();
+            getViewState().showDialog("Incorrect email", "Error");
         }else if(!Validation.checkForRepeat(pass1, pass2)){
-            getViewState().showLoginError("Passwords do not coincide");
+            getViewState().finishSignIn();
+            getViewState().showDialog("Passwords do not coincide", "Error");
         }else if(!Validation.checkPassword(pass1)){
-            getViewState().showLoginError("Passwords can't be shorter than 8 characters");
+            getViewState().finishSignIn();
+            getViewState().showDialog("Passwords can't be shorter than 8 characters", "Error");
         }else {
-
             mSignUpUseCase.get(login, pass1).subscribe(new CompletableObserver() {
                 @Override
                 public void onSubscribe(Disposable d) {
@@ -46,15 +49,19 @@ public class RegisterPresenter  extends BasePresenter<LoginView> {
 
                 @Override
                 public void onError(Throwable e) {
+                    String title = "Error";
+                    String message = "Unknown error";
+                    if(e instanceof Error){
+                        message = ((Error) e).getMyError().toString();
+                    }
                     getViewState().finishSignIn();
-                    getViewState().showMessageToUser(e.toString());
+                    getViewState().showDialog(message, title);
                 }
 
                 @Override
                 public void onComplete() {
                     getViewState().finishSignIn();
-                    getViewState().showMessageToUser("ur registered");
-
+                    getViewState().showDialog("U R loggined", "congratulations!");
                 }
             });
         }

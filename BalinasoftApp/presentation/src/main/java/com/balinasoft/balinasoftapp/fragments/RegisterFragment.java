@@ -1,11 +1,11 @@
 package com.balinasoft.balinasoftapp.fragments;
 
-import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,6 +33,7 @@ public class RegisterFragment extends MvpAppCompatFragment implements LoginView 
     Button mLoginButton;
 
     ProgressDialog mProgress;
+    AlertDialog.Builder mDialogBuilder;
 
     @InjectPresenter
 
@@ -62,21 +63,12 @@ public class RegisterFragment extends MvpAppCompatFragment implements LoginView 
         mProgress.setMessage("Waiting for server");
         mProgress.setCanceledOnTouchOutside(false);
         mProgress.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-        mProgress.setButton(Dialog.BUTTON_POSITIVE, "CLOSE", (dialog, which) -> mProgress.dismiss());
         mProgress.show();
-        mProgress.getButton(DialogInterface.BUTTON_POSITIVE).setVisibility(View.GONE);
     }
 
     @Override
     public void finishSignIn() {
         mProgress.dismiss();
-    }
-
-    @Override
-    public void showLoginError(String msg) {
-        mProgress.setTitle("ERROR");
-        mProgress.setMessage(msg);
-        mProgress.getButton(DialogInterface.BUTTON_POSITIVE).setVisibility(View.VISIBLE);
     }
 
 
@@ -85,6 +77,23 @@ public class RegisterFragment extends MvpAppCompatFragment implements LoginView 
         mRegisterPresenter.checkFields(mLoginEditText.getText().toString(), mPasswordEditText.getText().toString(), mRepeatEditText.getText().toString());
     }
 
+    @Override
+    public void showDialog(String msg, String title) {
+        mDialogBuilder = new AlertDialog.Builder(getContext());
+        mDialogBuilder
+                .setTitle(title)
+                .setMessage(msg)
+                .setNegativeButton("Close",
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.cancel();
+                            }
+                        });
+
+        AlertDialog alertDialog = mDialogBuilder.create();
+        alertDialog.show();
+    }
 
     @Override
     public void showMessageToUser(String msg) {

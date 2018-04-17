@@ -1,11 +1,14 @@
 package com.balinasoft.balinasoftapp.presenters;
 
 
+import android.util.Log;
+
 import com.arellomobile.mvp.InjectViewState;
 import com.balinasoft.balinasoftapp.app.App;
 import com.balinasoft.balinasoftapp.base.BasePresenter;
 import com.balinasoft.balinasoftapp.utils.Validation;
 import com.balinasoft.balinasoftapp.views.LoginView;
+import com.balinasoft.data.errors.Error;
 import com.balinasoft.domain.interactors.SignInUseCase;
 
 import javax.inject.Inject;
@@ -28,9 +31,11 @@ public class LoginPresenter extends BasePresenter<LoginView> {
     public void checkLogin(String login, String pas) {
         getViewState().startSignIn();
         if (!Validation.checkLogin(login)){
-            getViewState().showLoginError("Incorrect email");
+            getViewState().finishSignIn();
+            getViewState().showDialog("Incorrect email", "Error");
         }else if(!Validation.checkPassword(pas)){
-            getViewState().showLoginError("Passwords can not be shorter than 8 characters");
+            getViewState().finishSignIn();
+            getViewState().showDialog("Passwords can not be shorter than 8 characters", "Error");
         }else {
            mSignInUseCase.get(login, pas).subscribe(new CompletableObserver() {
                @Override
@@ -40,14 +45,19 @@ public class LoginPresenter extends BasePresenter<LoginView> {
 
                @Override
                public void onError(Throwable e) {
+                   String title = "Error";
+                   String message = "Unknown error";
+                   if(e instanceof Error){
+                       message = ((Error) e).getMyError().toString();
+                   }
                    getViewState().finishSignIn();
-                   getViewState().showMessageToUser(e.toString());
+                   getViewState().showDialog(message, title);
                }
 
                @Override
                public void onComplete() {
                    getViewState().finishSignIn();
-                   getViewState().showMessageToUser("U are loggined");
+                   getViewState().showDialog("U R loggined", "congratulations!");
                }
            });
         }

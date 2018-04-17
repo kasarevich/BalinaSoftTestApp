@@ -3,6 +3,7 @@ package com.balinasoft.data.utils;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+import android.util.Log;
 
 import static android.content.Context.MODE_PRIVATE;
 
@@ -14,6 +15,7 @@ public class AuthUtils {
             SharedPreferences mSharedPreferences = context.getSharedPreferences("SHARED_PREFERENCES", 0);
             if(mSharedPreferences != null)
                 mSharedPreferences.edit().putString(TOKEN, token).apply();
+            Log.e("Token", token);
     }
 
     public static String getToken(Context context){
