@@ -35,14 +35,12 @@ public class AppModule {
         return context;
     }
 
-    @NonNull
     @Provides
     @Singleton
     public PostExecutionThread getUiThread() {
         return new UIThread();
     }
 
-    @NonNull
     @Provides
     @Singleton
     public Retrofit getRetrofit() {
@@ -53,14 +51,12 @@ public class AppModule {
                 .build();
     }
 
-    @NonNull
     @Provides
     @Singleton
     public RestApi getRestApi(Retrofit retrofit) {
         return retrofit.create(RestApi.class);
     }
 
-    @NonNull
     @Provides
     public LoginRepository getLoginRepository(Context context, RestService restService) {
         return new LoginRepositoryImpl(context, restService);

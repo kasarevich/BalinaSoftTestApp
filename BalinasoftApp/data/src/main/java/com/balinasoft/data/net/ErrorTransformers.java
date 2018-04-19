@@ -30,42 +30,32 @@ public class ErrorTransformers {
     @Singleton
     public <Model> ObservableTransformer<Model, Model> parseHttpError() {
 
-        return new ObservableTransformer<Model, Model>(){
+        return upstream -> upstream.onErrorResumeNext(throwable -> {
+            if (throwable instanceof SocketTimeoutException) {
+                return Observable.error(new Error(ErrorType.SERVER_NOT_AVAILABLE));
+            } else if (throwable instanceof IOException){
+                return Observable.error(new Error(ErrorType.NO_INTERNET));
+            } else if (throwable instanceof HttpException) {
+                HttpException httpException = (HttpException) throwable;
+                Response response = httpException.response();
+                String bodyError = response.errorBody().string();
+                ErrorResponse errorResponse = gson.fromJson(bodyError, ErrorResponse.class);
+                    switch (errorResponse.getError()){
+                        case "security.signin.incorrect":
+                            return Observable.error(new Error(ErrorType.SIGN_IN_INCORRECT));
 
-            @Override
-            public ObservableSource<Model> apply(Observable<Model> upstream) {
+                        case "validation-error":
+                            return Observable.error(new Error(ErrorType.VALIDATION_ERROR));
 
-                return upstream.onErrorResumeNext(new Function<Throwable, ObservableSource<? extends Model>>() {
-                    @Override
-                    public ObservableSource<? extends Model> apply(Throwable throwable) throws Exception {
-                        if (throwable instanceof SocketTimeoutException) {
-                            return Observable.error(new Error(ErrorType.SERVER_NOT_AVAILABLE));
-                        } else if (throwable instanceof IOException){
-                            return Observable.error(new Error(ErrorType.NO_INTERNET));
-                        } else if (throwable instanceof HttpException) {
-                            HttpException httpException = (HttpException) throwable;
-                            Response response = httpException.response();
-                            String bodyError = response.errorBody().string();
-                            ErrorResponse errorResponse = gson.fromJson(bodyError, ErrorResponse.class);
-                                switch (errorResponse.getError()){
-                                    case "security.signin.incorrect":
-                                        return Observable.error(new Error(ErrorType.SIGN_IN_INCORRECT));
+                        case "security.signup.login-already-use":
+                            return Observable.error(new Error(ErrorType.LOGIN_ALREADY_USE));
 
-                                    case "validation-error":
-                                        return Observable.error(new Error(ErrorType.VALIDATION_ERROR));
-
-                                    case "security.signup.login-already-use":
-                                        return Observable.error(new Error(ErrorType.LOGIN_ALREADY_USE));
-
-                                    default:
-                                        return Observable.error(new Error(ErrorType.UNKNOWN));
-                                }
-                        } else {
+                        default:
                             return Observable.error(new Error(ErrorType.UNKNOWN));
-                        }
                     }
-                });
+            } else {
+                return Observable.error(new Error(ErrorType.UNKNOWN));
             }
-        };
+        });
     }
 }

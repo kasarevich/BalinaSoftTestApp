@@ -17,7 +17,7 @@ android {
         }
     }
 
-  /*  signingConfigs{
+    /*  signingConfigs{
         release{
             storeFile{'../dev.jks'}
             storePassword '12345678'
@@ -42,6 +42,8 @@ dependencies {
     implementation dependency.supportDesign
     implementation dependency.moxy
     implementation dependency.moxyCompat
+    implementation 'com.android.support.constraint:constraint-layout:1.1.0'
+    implementation 'com.android.support:support-v4:27.1.1'
     annotationProcessor dependency.moxyCompiler
     implementation dependency.dagger
     annotationProcessor dependency.daggerCompiler

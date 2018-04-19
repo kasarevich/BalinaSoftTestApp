@@ -2,6 +2,7 @@ package com.balinasoft.balinasoftapp.fragments;
 
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -99,4 +100,10 @@ public class RegisterFragment extends MvpAppCompatFragment implements LoginView 
     public void showMessageToUser(String msg) {
         Toast.makeText(getContext(), msg, Toast.LENGTH_LONG).show();
     }
+
+    @Override
+    public void startNaviActivity(){
+        startActivity(new Intent("com.balinasoft.balinasoftapp.activities.NaviActivity"));
+    }
+
 }

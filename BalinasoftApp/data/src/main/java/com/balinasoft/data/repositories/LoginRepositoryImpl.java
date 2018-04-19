@@ -28,11 +28,13 @@ public class LoginRepositoryImpl implements LoginRepository{
 
     @Override
     public Completable signIn (String login, String password){
+           AuthUtils.saveUsername(context, login);
            return Completable.fromObservable(restService.signIn(login, password).map(this::map));
     }
 
     @Override
     public Completable signUp (String login, String password){
+        AuthUtils.saveUsername(context, login);
         return Completable.fromObservable(restService.signUp(login, password).map(this::map));
     }
 

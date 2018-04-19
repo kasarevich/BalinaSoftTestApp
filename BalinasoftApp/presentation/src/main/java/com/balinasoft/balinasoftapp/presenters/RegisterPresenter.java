@@ -61,12 +61,11 @@ public class RegisterPresenter  extends BasePresenter<LoginView> {
                 @Override
                 public void onComplete() {
                     getViewState().finishSignIn();
-                    getViewState().showDialog("U R loggined", "congratulations!");
+                    getViewState().showMessageToUser("U R registered");
+                    getViewState().startNaviActivity();
                 }
             });
         }
-
-
 
     }
 

@@ -20,8 +20,9 @@ import io.reactivex.disposables.Disposable;
 @InjectViewState
 public class LoginPresenter extends BasePresenter<LoginView> {
 
-        @Inject
-        SignInUseCase mSignInUseCase;
+    @Inject
+    SignInUseCase mSignInUseCase;
+
 
     @Override
     public void createInject() {
@@ -30,38 +31,40 @@ public class LoginPresenter extends BasePresenter<LoginView> {
 
     public void checkLogin(String login, String pas) {
         getViewState().startSignIn();
-        if (!Validation.checkLogin(login)){
+        if (!Validation.checkLogin(login)) {
             getViewState().finishSignIn();
             getViewState().showDialog("Incorrect email", "Error");
-        }else if(!Validation.checkPassword(pas)){
+        } else if (!Validation.checkPassword(pas)) {
             getViewState().finishSignIn();
             getViewState().showDialog("Passwords can not be shorter than 8 characters", "Error");
-        }else {
-           mSignInUseCase.get(login, pas).subscribe(new CompletableObserver() {
-               @Override
-               public void onSubscribe(Disposable d) {
-                   compositeDisposable.add(d);
-               }
+        } else {
+            mSignInUseCase.get(login, pas).subscribe(new CompletableObserver() {
+                @Override
+                public void onSubscribe(Disposable d) {
+                    compositeDisposable.add(d);
+                }
 
-               @Override
-               public void onError(Throwable e) {
-                   String title = "Error";
-                   String message = "Unknown error";
-                   if(e instanceof Error){
-                       message = ((Error) e).getMyError().toString();
-                   }
-                   getViewState().finishSignIn();
-                   getViewState().showDialog(message, title);
-               }
+                @Override
+                public void onError(Throwable e) {
+                    String title = "Error";
+                    String message = "Unknown error";
+                    if (e instanceof Error) {
+                        message = ((Error) e).getMyError().toString();
+                    }
+                    getViewState().finishSignIn();
+                    getViewState().showDialog(message, title);
+                }
 
-               @Override
-               public void onComplete() {
-                   getViewState().finishSignIn();
-                   getViewState().showDialog("U R loggined", "congratulations!");
-               }
-           });
+                @Override
+                public void onComplete() {
+                    getViewState().finishSignIn();
+                    getViewState().showMessageToUser("U R loggined");
+                    getViewState().startNaviActivity();
+                }
+            });
         }
     }
 
-
 }
+
+

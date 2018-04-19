@@ -26,7 +26,7 @@ public class RestService {
     public Observable<LoggedInUser> signIn (String login, String password){
         return mRestApi
                 .logIn("application/json", "application/json", new User(login, password))
-                .compose(mErrorTransformers.<LoggedInUser> parseHttpError());
+                .compose(mErrorTransformers.parseHttpError());
     }
 
     public Observable<LoggedInUser> signUp (String login, String password){

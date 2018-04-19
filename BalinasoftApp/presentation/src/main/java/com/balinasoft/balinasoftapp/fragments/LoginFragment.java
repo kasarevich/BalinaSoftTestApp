@@ -1,5 +1,6 @@
 package com.balinasoft.balinasoftapp.fragments;
 
+import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
@@ -15,9 +16,13 @@ import android.widget.Toast;
 
 import com.arellomobile.mvp.MvpAppCompatFragment;
 import com.arellomobile.mvp.presenter.InjectPresenter;
+import com.arellomobile.mvp.presenter.ProvidePresenter;
 import com.balinasoft.balinasoftapp.R;
+import com.balinasoft.balinasoftapp.app.App;
 import com.balinasoft.balinasoftapp.presenters.LoginPresenter;
 import com.balinasoft.balinasoftapp.views.LoginView;
+
+import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -38,7 +43,6 @@ public class LoginFragment extends MvpAppCompatFragment implements LoginView {
     @InjectPresenter
     LoginPresenter loginPresenter;
 
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -54,7 +58,6 @@ public class LoginFragment extends MvpAppCompatFragment implements LoginView {
         mProgress = new ProgressDialog(getContext());
         mLoginButton.setOnClickListener(mLoginButton -> getLoginAndPassword());
     }
-
 
     @Override
     public void startSignIn() {
@@ -89,15 +92,15 @@ public class LoginFragment extends MvpAppCompatFragment implements LoginView {
                 .setTitle(title)
                 .setMessage(msg)
                 .setNegativeButton("Close",
-                        new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                dialog.cancel();
-                            }
-                        });
+                        (dialog, which) -> dialog.cancel());
 
         AlertDialog alertDialog = mDialogBuilder.create();
         alertDialog.show();
+    }
+
+    @Override
+    public void startNaviActivity(){
+        startActivity(new Intent("com.balinasoft.balinasoftapp.activities.NaviActivity"));
     }
 
 }
