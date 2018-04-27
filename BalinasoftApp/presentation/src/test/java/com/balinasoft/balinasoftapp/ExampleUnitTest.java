@@ -1,7 +1,10 @@
 package com.balinasoft.balinasoftapp;
 
+import junit.framework.Assert;
+
 import org.junit.Test;
 
+import static junit.framework.Assert.assertEquals;
 import static org.junit.Assert.*;
 
 /**
@@ -13,5 +16,12 @@ public class ExampleUnitTest {
     @Test
     public void addition_isCorrect() {
         assertEquals(4, 2 + 2);
+    }
+
+    @Test
+    public void test(){
+        int a = 2+2;
+
+        Assert.assertEquals(4,a);
     }
 }

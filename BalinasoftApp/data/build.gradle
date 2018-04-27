@@ -34,4 +34,5 @@ dependencies {
     api dependency.retrofitGsonConverter
     api dependency.retrofitRxAdapter
     api project(path: ':domain')
+    testImplementation 'junit:junit:4.12'
 }

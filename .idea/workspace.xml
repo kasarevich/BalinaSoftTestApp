@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3a86bc41-3c27-4153-abe1-2c48f4b85a2a" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/BalinasoftApp/.idea/assetWizardSettings.xml" afterPath="$PROJECT_DIR$/BalinasoftApp/.idea/assetWizardSettings.xml" />
+      <change beforePath="$PROJECT_DIR$/BalinasoftApp/.idea/caches/build_file_checksums.ser" afterPath="$PROJECT_DIR$/BalinasoftApp/.idea/caches/build_file_checksums.ser" />
+      <change beforePath="$PROJECT_DIR$/BalinasoftApp/build.gradle" afterPath="$PROJECT_DIR$/BalinasoftApp/build.gradle" />
+      <change beforePath="$PROJECT_DIR$/BalinasoftApp/data/build.gradle" afterPath="$PROJECT_DIR$/BalinasoftApp/data/build.gradle" />
+      <change beforePath="$PROJECT_DIR$/BalinasoftApp/data/src/main/java/com/balinasoft/data/entity/LoggedInUser.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/BalinasoftApp/data/src/main/java/com/balinasoft/data/entity/User.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/BalinasoftApp/data/src/main/java/com/balinasoft/data/entity/UserData.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/BalinasoftApp/data/src/main/java/com/balinasoft/data/net/RestApi.java" afterPath="$PROJECT_DIR$/BalinasoftApp/data/src/main/java/com/balinasoft/data/net/RestApi.java" />
+      <change beforePath="$PROJECT_DIR$/BalinasoftApp/data/src/main/java/com/balinasoft/data/net/RestService.java" afterPath="$PROJECT_DIR$/BalinasoftApp/data/src/main/java/com/balinasoft/data/net/RestService.java" />
+      <change beforePath="$PROJECT_DIR$/BalinasoftApp/data/src/main/java/com/balinasoft/data/repositories/LoginRepositoryImpl.java" afterPath="$PROJECT_DIR$/BalinasoftApp/data/src/main/java/com/balinasoft/data/repositories/LoginRepositoryImpl.java" />
+      <change beforePath="$PROJECT_DIR$/BalinasoftApp/data/src/test/java/com/balinasoft/data/ExampleUnitTest.java" afterPath="$PROJECT_DIR$/BalinasoftApp/data/src/test/java/com/balinasoft/data/ExampleUnitTest.java" />
+      <change beforePath="$PROJECT_DIR$/BalinasoftApp/domain/src/main/java/com/balinasoft/domain/repositories/LoginRepository.java" afterPath="$PROJECT_DIR$/BalinasoftApp/domain/src/main/java/com/balinasoft/domain/repositories/LoginRepository.java" />
+      <change beforePath="$PROJECT_DIR$/BalinasoftApp/presentation/build.gradle" afterPath="$PROJECT_DIR$/BalinasoftApp/presentation/build.gradle" />
+      <change beforePath="$PROJECT_DIR$/BalinasoftApp/presentation/src/androidTest/java/com/balinasoft/balinasoftapp/ExampleInstrumentedTest.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/BalinasoftApp/presentation/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/BalinasoftApp/presentation/src/main/AndroidManifest.xml" />
+      <change beforePath="$PROJECT_DIR$/BalinasoftApp/presentation/src/main/java/com/balinasoft/balinasoftapp/activities/NaviActivity.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/BalinasoftApp/presentation/src/main/java/com/balinasoft/balinasoftapp/activities/StartActivity.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/BalinasoftApp/presentation/src/main/java/com/balinasoft/balinasoftapp/activities/TabFragmentPagerAdapter.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/BalinasoftApp/presentation/src/main/java/com/balinasoft/balinasoftapp/fragments/LoginFragment.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/BalinasoftApp/presentation/src/main/java/com/balinasoft/balinasoftapp/fragments/MapFragment.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/BalinasoftApp/presentation/src/main/java/com/balinasoft/balinasoftapp/fragments/PhotosFragment.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/BalinasoftApp/presentation/src/main/java/com/balinasoft/balinasoftapp/fragments/RegisterFragment.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/BalinasoftApp/presentation/src/main/java/com/balinasoft/balinasoftapp/injection/AppComponent.java" afterPath="$PROJECT_DIR$/BalinasoftApp/presentation/src/main/java/com/balinasoft/balinasoftapp/injection/AppComponent.java" />
+      <change beforePath="$PROJECT_DIR$/BalinasoftApp/presentation/src/main/java/com/balinasoft/balinasoftapp/injection/AppModule.java" afterPath="$PROJECT_DIR$/BalinasoftApp/presentation/src/main/java/com/balinasoft/balinasoftapp/injection/AppModule.java" />
+      <change beforePath="$PROJECT_DIR$/BalinasoftApp/presentation/src/main/java/com/balinasoft/balinasoftapp/presenters/LoginPresenter.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/BalinasoftApp/presentation/src/main/java/com/balinasoft/balinasoftapp/presenters/RegisterPresenter.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/BalinasoftApp/presentation/src/main/java/com/balinasoft/balinasoftapp/views/LoginView.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/BalinasoftApp/presentation/src/main/java/com/balinasoft/balinasoftapp/views/MapView.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/BalinasoftApp/presentation/src/main/java/com/balinasoft/balinasoftapp/views/NaviView.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/BalinasoftApp/presentation/src/main/java/com/balinasoft/balinasoftapp/views/PhotosView.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/BalinasoftApp/presentation/src/main/res/layout/activity_navi.xml" afterPath="$PROJECT_DIR$/BalinasoftApp/presentation/src/main/res/layout/activity_navi.xml" />
+      <change beforePath="$PROJECT_DIR$/BalinasoftApp/presentation/src/main/res/layout/fragment_login.xml" afterPath="$PROJECT_DIR$/BalinasoftApp/presentation/src/main/res/layout/fragment_login.xml" />
+      <change beforePath="$PROJECT_DIR$/BalinasoftApp/presentation/src/main/res/layout/fragment_photos.xml" afterPath="$PROJECT_DIR$/BalinasoftApp/presentation/src/main/res/layout/fragment_photos.xml" />
+      <change beforePath="$PROJECT_DIR$/BalinasoftApp/presentation/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/BalinasoftApp/presentation/src/main/res/values/strings.xml" />
+      <change beforePath="$PROJECT_DIR$/BalinasoftApp/presentation/src/test/java/com/balinasoft/balinasoftapp/ExampleUnitTest.java" afterPath="$PROJECT_DIR$/BalinasoftApp/presentation/src/test/java/com/balinasoft/balinasoftapp/ExampleUnitTest.java" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GradleLocalSettings">
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1378" />
+    <option name="height" value="780" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="BalinaSoftTestApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BalinaSoftTestApp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BalinaSoftTestApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BalinaSoftTestApp" type="462c0819:PsiDirectoryNode" />
+              <item name="BalinasoftApp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BalinaSoftTestApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BalinaSoftTestApp" type="462c0819:PsiDirectoryNode" />
+              <item name="BalinasoftApp" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
+    <property name="settings.editor.selected.configurable" value="android.sdk-updates" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+    </configuration>
+    <configuration name="&lt;template&gt;" type="Applet" default="true" selected="false">
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+    </configuration>
+    <configuration name="&lt;template&gt;" type="JUnit" default="true" selected="false">
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+    </configuration>
+    <configuration name="&lt;template&gt;" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" default="true" selected="false">
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3a86bc41-3c27-4153-abe1-2c48f4b85a2a" name="Default" comment="" />
+      <created>1524654671704</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1524654671704</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <layout>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+</project>
